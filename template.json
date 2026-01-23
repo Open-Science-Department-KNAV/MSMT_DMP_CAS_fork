@@ -1,0 +1,76 @@
+{
+  "templateId": "msmt-dmp-cas-fork",
+  "organizationId": "053avzc18",
+  "version": "2.1.1",
+  "name": "M\u0160MT DMP - CAS fork",
+  "description": "M\u0160MT Data Management Plan template (derived from Horizon Europe DMP template) adapted for CAS",
+  "license": "Apache-2.0",
+  "metamodelVersion": "17.0",
+  "allowedPackages": [
+    {
+      "orgId": "053avzc18",
+      "kmId": "CAScommon",
+      "minVersion": "3.0.0",
+      "maxVersion": null
+    },
+    {
+      "orgId": "053avzc18",
+      "kmId": "CASlifesciences",
+      "minVersion": "3.0.0",
+      "maxVersion": null
+    }
+  ],
+  "formats": [
+    {
+      "uuid": "f4bd941a-dfbe-4226-a1fc-200fb5269311",
+      "name": "MS Word Document",
+      "icon": "far fa-file-word",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "text/html",
+            "extension": "html",
+            "template": "src/word/index.html.j2"
+          }
+        },
+        {
+          "name": "pandoc",
+          "options": {
+            "args": "--filter=pandoc-docx-pagebreakpy --reference-doc=src/word/reference.docx",
+            "from": "html",
+            "to": "docx"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "68c26e34-5e77-4e15-9bf7-06ff92582257",
+      "name": "PDF Document",
+      "icon": "far fa-file-pdf",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "content-type": "text/html",
+            "extension": "html",
+            "template": "src/index.html.j2"
+          }
+        },
+        {
+          "name": "weasyprint",
+          "options": {}
+        }
+      ]
+    }
+  ],
+  "_tdk": {
+    "version": "4.23.0",
+    "readmeFile": "README.md",
+    "files": [
+      "*",
+      "!.git/",
+      "!.env"
+    ]
+  }
+}

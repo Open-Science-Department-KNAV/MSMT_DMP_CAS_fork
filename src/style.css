@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap');
+/* Layout and global styles */
+
+@page {
+  size: A4;
+  margin-top: 2.5cm;
+  @top-center {
+    width: 100%;
+    content: element(header);
+    border-bottom: 0px solid black;
+  }
+
+  @bottom-left {
+    border-top: 0px solid black;
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    vertical-align: top;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+  }
+  @bottom-right {
+    border-top: 0px solid black;
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    vertical-align: top;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+  }
+  @bottom-center {
+    border-top: 0px solid black;
+    content: counter(page) " / " counter(pages);
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    vertical-align: top;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+  }
+}
+@page :blank {
+  @top-center { content: none }
+  @bottom-left { content: none }
+  @bottom-center { content: none }
+  @bottom-right { content: none }
+}
+@page :first {
+  @top-center { content: none }
+  @bottom-left { content: none }
+  @bottom-center { content: none }
+  @bottom-right { content: none }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-inside: avoid !important;
+  page-break-after: avoid !important;
+}
+
+html, body {
+  padding: 1em;
+}
+
+.myHeader {
+            position: running(header);
+            width: 100%;
+            height: 40px; /* Nastavte výšku záhlaví podle potřeby */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            /*padding:  20px;*/
+            box-sizing: border-box;
+}
+.myHeader img {
+    height: 40px; /* Nastavte výšku obrázku podle potřeby */
+}
+.myHeader .header-text {
+    font-size: 16px;
+    text-align: right;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 11pt;
+  counter-reset: section;
+  counter-reset: question;
+  max-width: 21cm;
+  margin: 0 auto;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Sections */
+
+section {
+  margin-bottom: 4rem;
+}
+
+.dmp-section .question + .question {
+  margin-top: 1cm;
+}
+
+/* First page */
+
+header {
+  height: 24cm;
+  box-sizing: border-box;
+  page-break-after: always;
+  position: relative;
+}
+
+header h1 {
+  margin: 2em;
+  font-size: 26pt;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+}
+
+header h3 {
+  margin-top: 7em;
+  font-size: 18pt;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Carlito', sans-serif;
+}
+
+header > div.info {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+header .note {
+  margin-top: 4em;
+  font-size: 10pt;
+  font-style: italic;
+}
+
+header img.msmt-header {
+  margin-top: 2cm;
+}
+
+header img.eu-flag {
+  max-width: 320px;
+}
+
+.version-info{
+  font-size: 12pt;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  margin-top: 0;
+}
+.version-info .version{
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.info .h3 {
+   margin-bottom:  12px;
+}
+
+/* Versions */
+
+div#dmp-versions table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+div#dmp-versions table,
+div#dmp-versions td,
+div#dmp-versions th {
+  border: 1px solid black;
+}
+
+div#dmp-versions td,
+div#dmp-versions th {
+  padding: 0.2em;
+  text-align:  left;
+}
+
+div#dmp-versions th.title {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.4em;
+}
+
+div#dmp-versions td.version-name {
+  text-align: center;
+  word-wrap: break-word;
+}
+
+div#dmp-versions td.version-date {
+  text-align: center;
+  width: 18ex;
+}
+
+div#dmp-versions td.version-changes {
+  word-wrap: break-word;
+}
+
+div#dmp-versions td.no-versions {
+  font-style: italic;
+  padding: 1em;
+  text-align: center;
+}
+
+        /* Čtvrtý sloupec se roztáhne */
+div#dmp-versions td:nth-child(3) {
+            width: 100%;
+}
+
+/* Contributors */
+
+.contributor .name {
+  font-weight: bold;
+}
+
+.contributor .role,
+.contributor .affiliation {
+  font-style: italic;
+  display: inline-block;
+}
+
+/* Projects */
+
+.abstract {
+  page-break-after: always;
+}
+
+.abstract p {
+  text-align: justify;
+}
+
+/* custom */
+
+.orcid-svg {
+  width: 0.5cm;
+  height: 0.5cm;
+  display: inline-block;
+  margin: 0px -4px -2px 2px;
+}
+
+div#dmp-projects,
+div#dmp-contributors,
+div#dmp-content {
+  page-break-before: always;
+}
+
+/* definition lists */
+
+dl::after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+dl dt {
+  display: inline-block;
+  width: 20%;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  float: left;
+  white-space: nowrap;
+}
+
+dl dt::after {
+  content: ":";
+}
+
+dl dd {
+  display: inline-block;
+  width: 80%;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  float: left;
+  font-style: italic;
+}
+
+dl dd ul {
+  padding: 0;
+  margin: 0;
+}
+
+dl dd ul li {
+  list-style: none;
+}
+
+dl dd ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+dl .contact-name {
+  font-weight: bold;
+}

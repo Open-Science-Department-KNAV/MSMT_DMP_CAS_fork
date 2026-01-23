@@ -1,0 +1,17 @@
+<h1>
+<strong>Data Management Plan</strong>
+<br/>
+
+{% if dc.qtn.version %}
+{% for version in dc.qtn.versions if version.uuid == dc.qtn.version.uuid %}
+{{version.name}}
+
+{% endfor %}
+{% endif %}
+
+</h1>
+<div custom-style="DatumOdstavec">
+    {{ dc.doc.created_at|datetime_format("%d %B %Y") }}
+</div>
+
+
