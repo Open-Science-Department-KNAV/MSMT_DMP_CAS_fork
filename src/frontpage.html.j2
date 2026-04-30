@@ -15,8 +15,8 @@
 
 
     <div class="version-info">
-        {%  if dc.qtn.versions %}
-            {% set version = dc.qtn.versions[-1] %}
+        {%  if dc.project.versions %}
+            {% set version = dc.project.versions[-1] %}
             <div class="version">{{version.name}}</div>
         {% else  %}
             <div class="version">NO VERSION</div>

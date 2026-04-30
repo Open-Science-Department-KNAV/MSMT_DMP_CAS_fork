@@ -1,11 +1,11 @@
 {
   "templateId": "msmt-dmp-cas-fork",
   "organizationId": "053avzc18",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "name": "M\u0160MT DMP - CAS fork",
   "description": "M\u0160MT Data Management Plan template (derived from Horizon Europe DMP template) adapted for CAS",
   "license": "Apache-2.0",
-  "metamodelVersion": "17.0",
+  "metamodelVersion": "18.0",
   "allowedPackages": [
     {
       "orgId": "053avzc18",
@@ -65,7 +65,7 @@
     }
   ],
   "_tdk": {
-    "version": "4.23.0",
+    "version": "4.29.0",
     "readmeFile": "README.md",
     "files": [
       "*",
