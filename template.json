@@ -1,7 +1,7 @@
 {
   "templateId": "msmt-dmp-cas-fork",
   "organizationId": "053avzc18",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "name": "M\u0160MT DMP - CAS fork",
   "description": "M\u0160MT Data Management Plan template (derived from Horizon Europe DMP template) adapted for CAS",
   "license": "Apache-2.0",
