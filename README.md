@@ -36,7 +36,12 @@ Adapted for CAS by
 
 ## Changelog
 
-### 2.2.0
+### 2.2.2
+
+- Added new MSMT logo
+- released 2026-05-21
+
+### 2.2.0 & 2.2.1
 
 - Updated according to fw:common-horizon-europe-dmp:1.21.0
 - released 2026-04-30
